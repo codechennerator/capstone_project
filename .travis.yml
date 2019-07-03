@@ -6,7 +6,6 @@ cache:
   - node_modules
 before_script:
 - node index.js &
-if: type = push
 deploy:
   provider: cloudfoundry
   api: https://api.ng.bluemix.net
@@ -18,4 +17,4 @@ deploy:
     secure: mSPLqhXZVDurzchlVO2IdC7bhBqauAAtGtYE4D2lzYiJMIQ9sMdRDqF8tTH9qXPB1dqWF/EHkkEymBTLlwQIv4hSJDcladdOoljMiREgl7kJ21g8aq1iGVPqFnztNWGbJBGdnpxIZwWdb3t4e2e+Vz1k0PzP2ubwPx08HEzVB3YgG8plt5jRkU0T1GNUViHeRNoMJRLlHRwf6OmCrrpjizyTQBbyKrMVsJXJ+ugOL4cWyaxI7CDOENlaakrly0x2wRaR/1GHeJcpowshdqXAGFNP3JK6ie8PY8/D9pUcShDZdGSmDmI+X5tZnXofL3PSa3FIHo3nZOIxUezMtdHv/hmUOCXP0MCVchP6xsDTUnFBiTohjx0LAFUSxz+vzIGxRP8RCP3DkTevD1etprXJKDoaiI1LPCat6dxOxRNcVVYAAIZFEwP+hnjBRzKuHc0pzrZFFIkVBkhAKrwbW/3swglzPjWmh1MK7cBNdUtdwhs08plmGcgAf0BReXb4SGT74NXNNX4R36Cjrw2/s56CRSs8Us+6NtGFucEapp3Pu+oQTfkpNXELGfDHCYC83ltPqXV/ObEyeKk7JYsvEc0+DojakTeNzJj5ksPBbRMkcADcrt28bgYosQbNtjE6YDXvriF00VJBc8uVGNDFtFvrV460PKN7EbOU1MMKGoFqeWk=
   app_name: Travis-Simple-CICD
   on:
-    repo: codechennerator/capstone_project
+    branch: master
