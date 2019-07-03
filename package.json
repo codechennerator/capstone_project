@@ -4,6 +4,7 @@
   "description": "Capstone repo demonstrating CI/CD and test driven dev.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha test"
   },
   "repository": {
