@@ -1,8 +1,19 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
-    directories:
-      - "node_modules"
+  directories:
+  - node_modules
 before_script:
-  - node index.js &
+- node index.js &
+if: type = push
+deploy:
+  provider: cloudfoundry
+  api: $CLOUDFOUNDRY_API
+  username: $CLOUDFOUNDRY_USERNAME
+  password:
+    secure: tgS+AnfDxhE7f5UELl7J7xOvrWSJmFoIN+qwzz8V1F2oHvurDIBrY1vLFe6xM/RnmrBydwu/cGxOC/+ATbT41fwDq4m5Z1n3XtAXmThYbYnwjLuUjjC4oZTlzrh0eTExjj9VYFDsGtPPfyB+4Aw9T/8UlALoD9W5ZPM5VPdtQBUiIQDKOnlqOA2DBAoBeS+2f8FS9t35a4z2xS0iNzKe7HXyji+ppEZP4E4VIFqj0vElF58iVr+Cw7kEWe4m92aIIsmhbkW0VTs9VJIKLUj3vh0OL1C9G5UPtajoUlREsUT2Bnpee2YGcAZo+z5LTnQkuF6z3M0f9rK+yGSNX8CW6SfUVAJuHR3DFr6M+qmrwDO2HMXHqb3l+oAGmKg3PTete56tfpLeQqQJvYFYxZHSFYaZgk2Dbcvgh/KXokKkT6CcO9zqLLfFNc7r+XYqU6wt0lgZkF5sNZ76bXI4ft4gM0fug6MZeRhZ02YVdz6aFgOBy7p4yUrsViESUA1/7TiWyDgTJqCahGLyfjZ/19Q8WLW/O07sZdLB9nzV7MN0JB+QKQjMaZmZvtucCSXua+shEGBDhX8W2FSo6hp+QohM/Q8y5oPjEdUBWpsTqK+PIhh2aldY8F8OMCnULH6E+D/a/xInGTU6fxmd/4J6bij466sNNNI5ElIHUTwdOugGCwg=
+  organization: $CLOUDFOUNDRY_ORGNAME
+  space: dev
+  on:
+    repo: codechennerator/capstone_project
