@@ -6,6 +6,8 @@ cache:
   - node_modules
 before_script:
 - node index.js &
+branches:
+  only: master
 deploy:
   provider: cloudfoundry
   api: https://api.ng.bluemix.net
