@@ -1,9 +1,12 @@
 class Game {
     constructor() {
         this.score = {
-            user: 0,
-            computer: 0
+            player1: 0,
+            player2: 0
         };
+        this.winnerTable = [['tie', 'player2', 'player1'],
+                            ['player1', 'tie', 'player2'],
+                            ['player2', 'player1', 'tie']];
     }
 
     getScore() {
@@ -11,13 +14,22 @@ class Game {
     }
 
     updateScore(winner) {
-        if (winner === 'computer' || winner === 'player') {
+        if (winner === 'player1' || winner === 'player2') {
             this.score[winner] ++;
         } else {
             throw new Error(401);
         }
-        return this.getScore();
+        return this.score;
     }
+
+    checkWinner(p1Selection, p2Selection) {
+        let winner = this.winnerTable[p1Selection][p2Selection];
+        if ( winner === 'player1' || winner === 'player2') {
+            return winner;
+        }
+        return "tie";
+    }
+
 }
 
 module.exports = Game;
