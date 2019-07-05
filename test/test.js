@@ -54,13 +54,7 @@ describe('Game Logic', function() {
         it('Game should return the right winner depending on who wins', function() {
             testPlayer1.select('rock');
             testPlayer2.select('rock');
-            expect(testGame.winnerTable[testPlayer1.selection][testPlayer2.selection]).to.equal('tie');
-            testPlayer1.select('paper');
-            testPlayer2.select('paper');
-            expect(testGame.winnerTable[testPlayer1.selection][testPlayer2.selection]).to.equal('tie');
-            testPlayer1.select('scissors');
-            testPlayer2.select('scissors');
-            expect(testGame.winnerTable[testPlayer1.selection][testPlayer2.selection]).to.equal('tie');
+            expect(testGame.checkWinner(testPlayer1.selection, testPlayer2.selection)).to.equal(false);
             testPlayer1.select('rock');
             testPlayer2.select('scissors');
             expect(testGame.checkWinner(testPlayer1.selection, testPlayer2.selection)).to.equal('player1');

@@ -27,7 +27,7 @@ class Game {
         if ( winner === 'player1' || winner === 'player2') {
             return winner;
         }
-        return "tie";
+        return false;
     }
 
 }
